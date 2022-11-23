@@ -1,0 +1,24 @@
+name: Download Release
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2  
+      
+      - name: Download release
+        uses: robinraju/release-downloader@v1.6
+        with:
+          latest: true
+          fileName: "Ramesh-deepspace.zip"
+      
+      - name: list files
+        run: |
+          ls
