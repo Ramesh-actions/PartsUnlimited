@@ -22,3 +22,12 @@ jobs:
       - name: list files
         run: |
           ls
+          
+      - name: list files
+        run: |
+          curl \
+           -X POST \
+                -H "Accept: application/vnd.github+json" \
+                -H "Authorization: Bearer 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" \
+                    https://api.github.com/repos/CanarysPlayground/repo-template1/releases \
+                 -d '{"tag_name":"1.0","target_commitish":"main","name":"spacegameleaderboard.zip","body":"Description of the release","draft":false,"prerelease":false,"generate_release_notes":false}'
